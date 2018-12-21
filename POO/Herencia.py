@@ -51,7 +51,7 @@ class VehiculosElectricos(Vehiculos):
 	def __init__(self, marca , modelo):
 
 		super().__init__(marca, modelo)  # Hace que se puedan heredar los parametros del primer constructor
-
+		
 		self.autonomia = 100		#|
 						#|
 	def cargarEnergia(self):		#|
