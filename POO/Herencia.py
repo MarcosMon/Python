@@ -52,15 +52,15 @@ class VehiculosElectricos(Vehiculos):
 
 		super().__init__(marca, modelo)  # Hace que se puedan heredar los parametros del primer constructor
 
-		self.autonomia = 100					#|
-												#|
-	def cargarEnergia(self):					#|
-												#|
-		self.cargando = True					#|
-												#|
-												#|	
-												#|
-												#↓
+		self.autonomia = 100		#|
+						#|
+	def cargarEnergia(self):		#|
+						#|
+		self.cargando = True		#|
+						#|
+						#|	
+						#|
+						#↓
 
 class BicicletaElectrica(VehiculosElectricos,Vehiculos):   # La herencia múltiple, se le dará preferencia a la clase que tenemos en la primera posición, es decir, VehiculosElectricos
 	pass
