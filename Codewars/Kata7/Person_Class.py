@@ -8,9 +8,12 @@ class Person():
 
 
 matz = Person('Yukihiro', 'Matsumoto', 47)
-assert matz.full_name == 'Yukihiro Matsumoto'
-assert matz.age == 47
-
 joe = Person('Joe', 'Smith', 30)
-assert joe.full_name == 'Joe Smith'
-assert joe.age == 30
+
+if __name__ == '__main__':
+
+	assert matz.full_name == 'Yukihiro Matsumoto'
+	assert matz.age == 47
+
+	assert joe.full_name == 'Joe Smith'
+	assert joe.age == 30
