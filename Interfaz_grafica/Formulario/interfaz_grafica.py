@@ -7,10 +7,6 @@ raiz.title("Formulario")
 
 raiz.resizable(1,1)
 
-#raiz.iconbitmap("nombre.imagen")
-
-#raiz.geometry("400x200")
-
 raiz.config(relief="groove")
 
 raiz.config(bd=55)
@@ -36,17 +32,6 @@ miFrame.config(relief="groove")   # el tipo de borde
 miFrame.config(bd=35) # el borde es de 35 
 
 miFrame.config(cursor="pirate") # el cursor del Frame es una calavera
-"""
-miImagen=PhotoImage(file="descarga.png") #declaramos la imagen en una variable
-
-miLabel=Label(miFrame, image=miImagen) # al Frame le añadimos una imagen
-
-misegundo=Label(miFrame, text="Bienvenidos a mi nueva interface", fg="blue",font=("Comic Sans",14)) # tamaño de letra, tipo, fuente y texto
-
-misegundo.place(x=240, y=-10) # situar en este caso el texto a donde queremos
-
-miLabel.place(x=600, y=-10) # situar en este caso la imagen a donde queremos
-"""
 
 minombre1=StringVar()
 
