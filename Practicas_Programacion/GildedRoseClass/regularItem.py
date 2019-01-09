@@ -19,6 +19,7 @@ class RegularItem(Item,Updatable):
 		else:
 			self.setQuality(-2)
 		self.setSell_in()
+		
 
 
 
