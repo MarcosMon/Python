@@ -1,4 +1,5 @@
 from regularItem import RegularItem
+
 class AgedBrie(RegularItem):
 
 	def update_quality(self):
@@ -16,4 +17,10 @@ if __name__ == "__main__":
 	##Dentro de fecha, aumenta calidad 1
 	miAgedBrie=AgedBrie("Paquito", 100, 20)
 	miAgedBrie.update_quality()
-	assert miAgedBrie.getQuality() == 21
+	assert miAgedBrie.getQuality() == 21 
+
+	##Fuera de fecha, aumenta calidad 2
+	miAgedBrie=AgedBrie("Pepito", 0, 20)
+	miAgedBrie.update_quality()
+	assert miAgedBrie.getQuality() == 22
+	
