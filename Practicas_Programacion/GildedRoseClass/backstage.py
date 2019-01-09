@@ -39,4 +39,6 @@ if __name__ == "__main__":
 
 	assert miBackstage2.getQuality()== 40
 
+	#la calidad no baja pero si el dia de venta 
+
 
