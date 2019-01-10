@@ -1,0 +1,36 @@
+class TarjetaPrepago():
+	"""docstring for TarjetaPrepago"""
+	def __init__(self, numeroTelefono,saldo):
+
+		self.numeroTelefono = str(numeroTelefono)
+		self.saldo = float(saldo)
+
+	def setingresarSaldo(self,añadir_saldo):
+		self.saldo+=añadir_saldo
+
+	def setenviarMensaje(self,mensajes):
+			
+		self.saldo-= mensajes*9/100
+
+	def getSaldoActual(self):
+		return self.saldo
+
+
+	def setrealizarLlamada(self,segundos_hablados):
+		self.saldo-=(segundos_hablados+15)/100
+
+	def consultarTarjeta(self):
+		print( "Tú saldo actual es de %s€ y tu número de telefono es %s" % (self.getSaldoActual(),self.numeroTelefono)) 
+
+
+if __name__ == '__main__':
+
+	tarjeta=TarjetaPrepago("61481248",20)
+
+	tarjeta.setenviarMensaje(5) 
+
+	assert tarjeta.getSaldoActual() == 19.55
+
+	tarjeta.setrealizarLlamada(20)
+
+	tarjeta.consultarTarjeta()
