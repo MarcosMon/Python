@@ -11,20 +11,15 @@ class CuentaCorriente():
 
 
 	def setRetirarDinero(self, dineroretirado):
-		self.dineroretirado=int(dineroretirado)
 
 		self.__saldo-=int(dineroretirado)
 
-		return self.__saldo
+		
 
 
 	def setIngresarDinero(self,dineroingresado):
 
-		self.dineroingresado=int(dineroingresado)
-
 		self.__saldo+=int(dineroingresado)
-
-		return self.__saldo
 
 
 	def getNombre(self):
@@ -68,10 +63,13 @@ miCuentaCorriente=CuentaCorriente("Marcos","Monjon M","Cfemenias","61722222","37
 
 if __name__ == "__main__":
 
-	assert miCuentaCorriente.setIngresarDinero(100) ==  1100.0
-	assert miCuentaCorriente.setRetirarDinero(400) == 700.0
+	miCuentaCorriente.setIngresarDinero(100)
+	assert miCuentaCorriente.getSaldo() == 1100.0
+	miCuentaCorriente.setRetirarDinero(400)
+	assert miCuentaCorriente.getSaldo()
 	assert miCuentaCorriente.saldoNegativo() == False
-	assert miCuentaCorriente.setRetirarDinero(800) == -100.0
+	miCuentaCorriente.setRetirarDinero(800)
+	assert miCuentaCorriente.getSaldo() == -100.00
 	assert miCuentaCorriente.saldoNegativo() == True
 	assert miCuentaCorriente.getNombre() == "Marcos"
 	assert miCuentaCorriente.getSaldo() == -100.0
