@@ -14,8 +14,7 @@ class TarjetaPrepago():
         self.consumoLlamadas = 0
         self.consumoMensajes = 0
         self.tiempoHablado = 0
-        self.printButton = Button(
-        frame, text="Datos De la cuenta", command=self.getConsultarTarjeta)
+        self.printButton = Button(frame, text="Datos De la cuenta", command=self.getConsultarTarjeta)
         self.printButton.pack(side=LEFT)
         frame.config(bd=50)  # el borde es de 35
         frame.config(relief="groove")   # el tipo de borde
