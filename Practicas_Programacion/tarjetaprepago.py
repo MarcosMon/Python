@@ -4,21 +4,15 @@ from tkinter import *
 class TarjetaPrepago():
     """docstring for TarjetaPrepago"""
 
-    def __init__(self, numeroTelefono, nif, saldo, master):
+    def __init__(self, numeroTelefono, nif, saldo):
 
-        frame = Frame(master)
-        frame.pack()
         self.numeroTelefono = str(numeroTelefono)
         self.saldo = float(saldo)
         self.nif = str(nif)
         self.consumoLlamadas = 0
         self.consumoMensajes = 0
         self.tiempoHablado = 0
-        self.printButton = Button(frame, text="Datos De la cuenta", command=self.getConsultarTarjeta)
-        self.printButton.pack(side=LEFT)
-        frame.config(bd=50)  # el borde es de 35
-        frame.config(relief="groove")   # el tipo de borde
-        frame.config(bg="Blue")
+
 
     def getSaldo(self):
         return round(self.saldo, 2)
@@ -83,8 +77,7 @@ class TarjetaPrepago():
 
 
 if __name__ == '__main__':
-    root = Tk()
-    tarjeta = TarjetaPrepago("61481248", "431325462P", 20, root)
+    tarjeta = TarjetaPrepago("61481248", "431325462P", 20)
     tarjeta.setenviarMensaje(72)
     assert tarjeta.getSaldo() == 13.52
     tarjeta.setingresarSaldo(40)
@@ -93,4 +86,3 @@ if __name__ == '__main__':
     assert tarjeta.getSaldo() == 16.37
     assert tarjeta.getConsumoMensajes() == 6.48
     tarjeta.getConsultarTarjeta()
-    root.mainloop()
