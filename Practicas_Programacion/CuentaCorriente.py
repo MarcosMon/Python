@@ -1,79 +1,82 @@
 class CuentaCorriente():
 
 	def __init__(self, nombre, apellidos, direccion, telefono, dni):
-		self.__nombre=nombre
-		self.__apellidos=str(apellidos)
-		self.__direccion=str(direccion)
-		self.__telefono=str(telefono)
-		self.__saldo= float(1000)
-		self.__dni=str(dni)
-
-
-
-	def setRetirarDinero(self, dineroretirado):
-
-		self.__saldo-=int(dineroretirado)
-
-		
-
-
-	def setIngresarDinero(self,dineroingresado):
-
-		self.__saldo+=int(dineroingresado)
-
+		self.nombre=nombre
+		self.apellidos=str(apellidos)
+		self.direccion=str(direccion)
+		self.telefono=str(telefono)
+		self.saldo= float(1000)
+		self.dni=str(dni)
 
 	def getNombre(self):
 
-		return self.__nombre
+		return self.nombre
 
 	def getApellidos(self):
 
-		return self.__apellidos
+		return self.apellidos
 
 	def getDireccion(self):
 
-		return self.__direccion
+		return self.direccion
 
 	def getTelefono(self):
 
-		return self.__telefono
+		return self.telefono
 
 	def getSaldo(self):
 
-		return self.__saldo
-		
+		return self.saldo
 
+	def setNombre(self):
+		self.nombre = nombre
 
-	def consultarCuenta(self):
-		
-		print( "Nombre: " , self.getNombre(), "\nApellidos: ", self.getApellidos(),"\nDireccion: ", self.getDireccion(), "\nTelefono: ", self.getTelefono(),"\nSaldo: ", self.getSaldo())
+	def setApellidos(self):
+		self.apellidos = apellidos
 
+	def setDireccion(self):
+		self.direccion = direccion
 
-		
+	def setTelefono(self):
+		self.telefono = telefono
+
+	def setSaldo(self,dinero):
+		self.saldo += dinero
+
+	def RetirarDinero(self, dineroretirado):
+
+		self.setSaldo(-dineroretirado)
+
+	def IngresarDinero(self,dineroingresado):
+
+		self.setSaldo(dineroingresado)
+
 
 	def saldoNegativo(self):
-		
 
-		if self.__saldo >0:
+		if self.saldo >0:
 			return False
 		else:
 			return True
 
-miCuentaCorriente=CuentaCorriente("Marcos","Monjon M","Cfemenias","61722222","3724712s")
+	def consultarCuenta(self):
+		
+		print( "Nombre:" , self.getNombre(), "\nApellidos:", self.getApellidos(),"\nDireccion:", self.getDireccion(), "\nTelefono:", self.getTelefono(),"\nSaldo:", self.getSaldo())
+
 
 if __name__ == "__main__":
-
-	miCuentaCorriente.setIngresarDinero(100)
+	miCuentaCorriente=CuentaCorriente("Marcos","Monjon M","Cfemenias","61722222","3724712s")
+	miCuentaCorriente.IngresarDinero(100)
 	assert miCuentaCorriente.getSaldo() == 1100.0
-	miCuentaCorriente.setRetirarDinero(400)
+	miCuentaCorriente.RetirarDinero(400)
 	assert miCuentaCorriente.getSaldo()
 	assert miCuentaCorriente.saldoNegativo() == False
-	miCuentaCorriente.setRetirarDinero(800)
+	miCuentaCorriente.RetirarDinero(800)
 	assert miCuentaCorriente.getSaldo() == -100.00
 	assert miCuentaCorriente.saldoNegativo() == True
 	assert miCuentaCorriente.getNombre() == "Marcos"
 	assert miCuentaCorriente.getSaldo() == -100.0
-
+	miCuentaCorriente.consultarCuenta()
 
 
 
